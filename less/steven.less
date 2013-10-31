@@ -1,0 +1,834 @@
+//
+//LESS written by Steven Bassett
+//@bassettsj
+//s.bassett@neu.edu
+//This LESS is to customize the theme for the SPARC project.
+//REMEBER TO COMMENT AND BE ORDERLY!
+
+@import "mixins.less";
+@import "isotope.less";
+@import "variables.less";
+@import "helper-classes.less";
+
+h1, h2, h3, h4, h5 h6{
+  font-family: @maven;
+  color: @nu_red;
+  font-weight: normal;
+  & a{
+    color:@nu_red;
+    &:hover{
+      color: darken(@nu_red, 30%);
+    }
+  }
+}
+
+//createing a class with the name exo to style text.
+.exo{
+  font-family: @maven;
+}
+//homepage node - hiding the title
+.page-node-33{
+  h1.page-header{
+  .hidden;
+  }
+}
+
+body {
+   font-family: @helvetica;
+   font-weight: 300;
+   padding-top: 0;
+   background-image: url(../img/white-texture.png);
+   background-color: rgb(238, 238, 238);
+}
+@media (min-width: 1200px) {
+body{   background-image: url(../img/darklinen.png);
+}
+
+@media (max-width: 979px) {
+  #site-name-slogan h1{
+    font-size: 25px;
+  }
+
+}
+
+
+.texture-white{
+   background-image: url(../img/white-texture.png);
+   background-color: rgb(238, 238, 238);
+   padding: 25px 60px;
+   }
+
+}
+
+
+//setting the nav bar branding to just be the blue from the branding images so far.
+  //making the name align with the icon font.
+#site-name-slogan{
+  margin-bottom: 0;
+  .brand{
+    color: black;
+    font-family: @maven;
+    &:hover{
+      text-decoration: none;
+      text-shadow: 0px 0px 3px lighten(@nu_gray, 10%);
+    }
+    span.site-name{
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 25px;
+      letter-spacing: 0.1em;
+    }
+  }//end brand
+}
+
+//match the search text to the rest of the navbar
+.navbar-search .search-query{
+  font-family: @maven;
+}
+//creating the default Northeastern Font
+.northeastern_font{
+  font-family: "New Baskerville", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  color: @nu_red;
+  font-weight: normal;
+}
+
+
+//styling the page header
+.sparc-icon{
+  color: @nu_red;
+}
+
+.northeastern_font{
+  display: block;
+  text-indent: -9999px;
+  background: url('../img/nu-watermark.svg') no-repeat top left;
+  background-size: contain;
+  max-width: 100%;
+}
+
+.no-inlinesvg .northeastern_font{
+  background: url('../img/nu-watermark.png') no-repeat top left; 
+  background-size: ;
+}
+
+.nu_branding{
+  .northeastern_font{
+    width: 349px;
+    margin-top:0.3em;
+  }
+  #site-name-slogan{
+    display: block;
+  }
+  .sparc-icon{
+    font-size: 300%;
+    position: relative;
+    top: 25px;
+  }
+  img{
+    width: 45px;
+  }
+//tom wants the font to be as light as possible
+  p.lead.pull-right{
+    font-weight: 100;
+  }
+}
+//preventing the hover underline.
+a.brand.dmc:hover{
+  text-decoration: none;
+}
+.nu_red{
+  color: @nu_red;
+}
+.nu_gray{
+  color: darken(@nu_gray , 50%);
+}
+//creating an accessible class for hidden elements
+.hidden{
+  position: absolute;
+  left: -9999px;
+}
+
+//fixing the overlap from the icon font.
+@media (max-width: 979px) and (min-width: 768px){
+  .nu_branding #site-name-slogan{
+    font-size: 28px;
+  }
+}
+
+
+
+//hiding the the branding in the navbar by default/
+.scroll-hide{
+  display: none;
+  .brand{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 13px;
+    height: 25px;
+    font-size: 18px;
+    width: 250px;
+  }
+
+}
+@media (min-width: 980px){
+  .scroll-unhide{
+    .brand{
+      position: relative;
+      top: 6px;
+    }
+  }
+}
+
+
+//changing the color of the default links
+.navbar{
+  a{
+    font-family: @maven;
+    padding-top: 5px;
+      &:hover{
+      color: black;
+      }
+  }
+  }
+
+//creating a function to set hover background color and bottom border for main menu items
+.set-menu-color(@color){
+  color: @color;
+  border-bottom: 5px solid @color;
+  background: none;
+  //padding-bottom: 8px;
+  &:hover, &.active{
+    background-color: @color;
+    color:white;
+  }
+  ul.dropdown-menu{
+    li a{
+    background-color: @color;
+    color:white;
+      }
+  }
+}
+
+//setting the hero unit typography
+.hero-unit{
+  h2{
+    font-family: @maven;
+  }
+}
+//setting the CSS  to theme the nav bar.
+.alert-header{
+  font-family: @helvetica;
+}
+#main-menu{
+  li:nth-child(2) a, ul.drop-down a{
+    .set-menu-color(@news_blue);
+  }
+  li:nth-child(3) a, ul.drop-down a{
+    .set-menu-color(@help_brown);
+  }
+  li:nth-child(4) a, ul.drop-down a{
+    .set-menu-color(@about_purple);
+  }
+  li:nth-child(5) a, ul.drop-down a{
+    .set-menu-color(@abilities_brown);
+  }
+  li:nth-child(6) a, ul.drop-down a{
+    .set-menu-color(@contact_kaky);
+  }
+}
+.navbar .nav > li > a{
+  padding: 15px 15px 10px
+}
+.navbar-search{
+  margin-top: 10px;
+  vertical-align: text-bottom;
+}
+.navbar-search .search-query{
+  line-height: inherit;
+}
+.navbar .nav-collapse .btn, .navbar .nav-collapse .btn-group{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.block-title{
+  margin: 0.5em 0 1em 0;
+  font-family: @maven;
+  font-weight: normal;
+
+}
+.border-bottom (@color){
+  border-bottom: dashed @color;
+}
+.border-top (@color){
+  border-top: dashed @color;
+}
+
+
+
+//changing the default color for the menulinks
+.navbar .nav > li > a {
+  color: #000;
+  text-shadow: none;
+  &:hover{
+    color: #FFF;
+  }
+}
+#block-views-gallery-student-work-block{
+  margin-left: 0px;
+}
+// trying to create an icon class to re[prese
+.view-abilities{
+  text-align: center;
+  .thumbnail{
+    background-color: white;
+    padding: 0.35em;
+    overflow: hidden;
+    width: 116px;
+    height: 116px;
+    float: left;
+    margin: 0;
+    &:nth-child(odd){
+      margin: 0 1em 1em 0;
+    }
+    &:nth-child(even){
+      margin: 0 0 1em 0;
+    }
+    .fs1{
+      font-size: 225%;
+      line-height: 30px;
+      margin-top: 10px;
+    }
+    p.lead, p{
+      font-size: 14px;
+      height: 26px;
+      line-height: 13px;
+      margin-bottom: -0.2em;
+      text-overflow: ellipsis;
+    }
+    &.Audio .fs1{
+      color: @Audio;
+    }
+    &.CAD .fs1{
+      color: @CAD;
+    }
+    &.Modeling .fs1{
+      color: @Modeling;
+    }
+    &.Video .fs1{
+      color: @help_brown;
+    }
+    &.Graphics .fs1{
+      color: @Graphics;
+    }
+    &.Animation .fs1{
+      color: @Animation;
+    }
+    &.Data .fs1{
+      color: @Data;
+    }
+    &.GIS .fs1{
+      color: @GIS;
+    }
+    h3{
+      font-size: 18px;
+    }
+
+  }
+}
+//maxing the box full width on small screens.
+@media (max-width: 767px){
+  .nu_branding #site-name-slogan{
+    margin: 0.75em 0;
+    h1{
+      font-size: 23px;
+      line-height: 14px;
+      margin: 0;
+      height: auto;
+      .northeastern_font{
+        line-height: 24px;
+      }
+    }
+    h2.span6.pull-right{
+      float: none;
+      margin: 0;
+      margin-bottom: 0.25em;
+      min-height: 0;
+      a.brand.pull-right{
+        float: none;
+      }
+    }
+    h2 .brand span.site-name{
+      font-size: 19px;
+      letter-spacing: 0px;
+      line-height: 10px;
+    }
+    img{
+      width: 30px;
+    }
+  }
+  .view-abilities .thumbnail{
+    &:nth-child(odd), &:nth-child(even){
+      margin: 0.5em;
+      }
+  }
+}
+
+//Let's make the thumbnails always have a white background
+
+.news.updates .thumbnail{
+  background-color: white;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.view-software-view, .view-help-resources, .view-equipment {
+  .views-row{
+    background: white;
+    border-radius: 3px;
+    margin: 1em 1em 1em 0;
+    padding: 1em;
+    box-shadow: 0px 1px 3px rgba(3,3,3, 0.5);
+  }
+}
+
+//giving the narbar collapse button the NU Red.
+.navbar .btn-navbar{
+  background: none;
+  background-color: @nu_red;
+  &:hover{
+    background: none;
+    background-color: darken(@nu_red, 10%);
+  }
+}
+
+//styling the front page news blocks.
+
+.makeBubble{
+  background-color: white;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.view-big-news-stories, .view-news-3{
+  .views-row{
+    .makeBubble;
+  }
+  img.adaptive-image{
+    min-width: 100%;
+    height: auto;
+    border: 1px inset rgba(3,3,3, 0.5);
+  }
+
+}
+.view-display-id-abilities_list_van {
+  text-align: left;
+  .views-row{
+    display:inline;
+    max-width: 100%;
+    .fs1{
+      display: inline;
+    }
+  }
+}
+
+navbar{
+a {
+-webkit-transition: all .2s ease-in-out;
+}
+a:hover {
+-webkit-transform: scale(1.5);
+}
+}
+//styling the footer
+footer{
+  font-family:  @Georgia;
+  color: darken(@nu_gray, 10%);
+  a{
+    color: darken(@nu_gray, 10%);
+  }
+  .northeastern_font{
+    font-size: 125%;
+    color: #5B5B5B;
+    &:hover{
+      color: black;
+      text-decoration: none;
+    }
+  }
+  p.address{
+    margin-top: 2em;
+    font-size: 100%;
+  }
+  .social.icon{
+    float: left;
+    padding: 0.25em;
+    margin: 0.125em;
+    font-size: 20px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .youtube{
+    color: @youtube
+  }
+  .twitter{
+    color: @twitter;
+  }
+  .facebook{
+    color: @facebook;
+  }
+  span.ext{
+    .hidden;
+  }
+}
+
+.accordion-group{
+  background-color: white;
+}
+//adding a white background
+.view-taxonomy-term, .view-software-view,.view-equipment {
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  .views-row{
+    list-style: none;
+    .makeBubble;
+    background-color: white;
+    width: 255px;
+    padding: 10px;
+    margin: 0 0.5em 0.5em 0;
+    float: left;
+    clear: none;
+    h6, h5, h4{
+      margin: 3px 0;
+    }
+    img{
+      float: right;
+      margin: 0 0 4px 4px;
+    }
+  }
+}
+
+.node-software, .node-equipment, .node-resource{
+  .field{
+    float: left;
+    margin: 0 1em 1em 1em;
+  }
+  .field-name-body{
+    clear: left;
+    float: none;
+    border-top: 1px solid rgb(229, 229, 229);
+  }
+}
+
+.table.table-condensed{
+  font-size: 80%;
+}
+
+
+#navbar a.brand img{
+  height: 25px;
+  width: auto;
+}
+.view-taxonomy-term{
+  h4 a{
+    color: @nu_red;
+  }
+}
+
+/*
+.nav-pills{
+  ul{
+    .nav;
+    .nav-pills;
+  }
+}
+*/
+
+.nav-pills  li  a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  .m-border-radius(5px);
+}
+
+.accordion-toggle:hover:after, .accordion-toggle:focus:after{
+  content: "(show / hide)"
+}
+
+.view, .filters{
+.nav{
+  li{
+    a{
+      background: white;
+    }
+    a.active, a.active:hover{
+      color: white;
+background-color: rgb(0, 136, 204);
+    }
+  }
+}
+}
+
+.page-taxonomy {
+  .page-header{
+    .hidden;
+  }
+}
+aside.span3{
+  .well{
+    padding: 9px;
+    h3.block-title{
+    margin: 0.25em 0 0 0;
+    font-size: 20px;
+    line-height: 32px;
+    }
+    .nav{
+      margin-bottom: 10px;
+    }
+  }
+}
+#block-views-abilities-abilities-list-van, .block.filters{
+  margin: 0em;
+}
+
+.view-taxonomy-term .view-content{
+  margin-bottom: 2em;
+  clear: all;
+}
+
+#block-block-7, #block-views-abilities-stacked-pills-media{
+  h2.block-title{
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+.carousel{
+  margin: 1em auto;
+  .carousel-inner{
+  background-color: white;
+    img{
+     margin: 0 auto;
+     max-width: 100%;
+     width: auto;
+     max-height: 600px;
+     height: auto;
+    }
+  .carousel-caption{
+    color: white;
+    font-family: @helvetica;
+  }
+  }
+}
+
+
+.page-news .view-display-id-page_1{
+ .views-row{
+   max-width: 800px;
+   margin: 2em auto;
+ }
+}
+
+//normalizing the hero unit typography on the help and support page.
+.hero-unit ul{
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  li{
+    margin-bottom: 0.75em;
+    line-height: 27px;
+  }
+}
+
+.view-gallery{
+  img{
+    width:100%;
+  }
+  .modal{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    height: auto;
+    position: fixed;
+    &.fade.in{
+      top: 5%;
+    }
+    right: auto;
+    left: 5%;
+  }
+  .modal-body{
+    max-height: none;
+  }
+  .close{
+    color: @nu_red;
+    opacity: 0.75;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  @media (min-width: 1200px) {
+    .modal{
+      width: 80%;
+      max-width: intrinsic;
+      top: 5%;
+      right: 5%;
+      bottom: 5%;
+      left: 5%;
+      &.fade.in{
+        top: 5%
+      }
+    }
+  }
+}
+//setting the width and top offset
+.affix{
+  top: 100px;
+  width: 270px;
+}
+@media (max-width: 978px){
+  .affix{
+    width: auto;
+  }
+}
+// setting the affix to be static on small browsers
+@media (max-width: 767px) {
+  .affix{
+    position: static;
+  }
+}
+//webkit panorama
+@-webkit-keyframes panorama {
+	from {
+		background-position: 1500%
+	}
+	to {
+		background-position: 0%
+	}
+}
+//mozilla
+@-moz-keyframes panorama {
+	from {
+		background-position: 1500%
+	}
+	to {
+		background-position: 0%
+	}
+}
+//opera
+@-o-keyframes panorama {
+	from {
+		background-position: 1500%
+	}
+	to {
+		background-position: 0%
+	}
+}
+//keyframe without vendor
+@keyframes panorama {
+	from {
+		background-position: 1500%
+	}
+	to {
+		background-position: 0%
+	}
+}
+
+//allowing the panorama to start at 780px and up.
+@media (min-width: 768px){
+.front{
+  .region-sidebar-second{
+    margin-top: 76px;
+  }
+  #page-header{
+    background: url('../img/pano.jpg') repeat;
+    //webkit support
+    -webkit-animation-name: panorama;
+    -webkit-animation-duration: 1400s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    //mozilla support
+    -moz-animation-name: panorama;
+    -moz-animation-duration: 1400s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    //opera
+    -o-animation-name: panorama;
+    -o-animation-duration: 1400s;
+    -o-animation-timing-function: linear;
+    -o-animation-iteration-count: infinite;
+    //non-vendor
+    animation-name: panorama;
+    animation-duration: 1400s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    width: 100%;
+    height: 170px;
+    margin: 1em 0;
+    .m-border-radius (5px);
+       *{
+      display: none;
+    }
+  }
+}
+}
+figure{
+ width: 50%;
+ min-width: 190px;
+ float: left;
+}
+@media only screen
+and (max-width : 320px) {
+  figure{
+    margin: 0;
+    width: 100%;
+  }
+}
+article{
+  .field-type-taxonomy-term-reference{
+    margin: 10px 0;
+    & > div > div{
+      float: left;
+      margin: 0 5px 5px 0;
+    }
+    a{
+      padding: 5px;
+      margin-top: -5px;
+      float: left;
+      clear: right;
+      .m-border-radius(5px);
+      background-color: white;
+      &:hover, &:focus{
+        color: white;
+        background-color: @link_color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.page-abilities-all-all{
+  .page-header{
+    display: none;
+  }
+}
+
+.maintenance-page{
+  #page{
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 1em;
+  }
+}
+@import "print.less";

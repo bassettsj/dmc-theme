@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'sparc_icon';
+	src:url('fonts/sparc_icon.eot');
+	src:url('fonts/sparc_icon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/sparc_icon.svg#sparc_icon') format('svg'),
+		url('fonts/sparc_icon.woff') format('woff'),
+		url('fonts/sparc_icon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'sparc_icon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'sparc_icon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-facebook:before {
+	content: "\23";
+}
+.icon-twitter:before {
+	content: "\22";
+}
+.icon-github:before {
+	content: "\25";
+}
+.icon-help:before {
+	content: "\28";
+}
+.icon-microphone:before {
+	content: "\29";
+}
+.icon-compass:before {
+	content: "\2a";
+}
+.icon-map:before {
+	content: "\2b";
+}
+.icon-location:before {
+	content: "\2c";
+}
+.icon-camera:before {
+	content: "\2d";
+}
+.icon-images:before {
+	content: "\2e";
+}
+.icon-song:before {
+	content: "\2f";
+}
+.icon-movie:before {
+	content: "\30";
+}
+.icon-rocket:before {
+	content: "\31";
+}
+.icon-stats-up:before {
+	content: "\32";
+}
+.icon-globe:before {
+	content: "\33";
+}
+.icon-youtube:before {
+	content: "\21";
+}
+.icon-home:before {
+	content: "\24";
+}

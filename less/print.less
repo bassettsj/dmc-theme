@@ -1,0 +1,129 @@
+/**
+* Creating Print Styles for the DMC website.
+*/
+
+@media print{
+  * {
+      background: transparent !important;
+      color: #000 !important; /* Black prints faster: h5bp.com/s */
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+  article{
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+  }
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+
+  thead {
+      display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+
+  img {
+      max-width: 100% !important;
+  }
+
+  @page {
+      margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+      orphans: 3;
+      widows: 3;
+  }
+
+  h2,
+  h3 {
+      page-break-after: avoid;
+  }
+
+  article{
+    a:after {
+      content: " [" attr(href) "] ";
+    }
+  }
+  body {
+    font-family: Georgia, serif;
+    background: none;
+    color: black;
+  }
+
+  #navbar, #toolbar, footer, aside{
+    .hidden-all;
+  }
+  .view-taxonomy-term .views-row,
+  .view-software-view .views-row,
+  .view-equipment .views-row{
+   display:block !important;
+   float:none !important; 
+   position:relative !important;
+   left:  0 !important;
+   top:auto !important;  
+   overflow:visible !important;
+   max-width: 100% !important;
+   height: auto !important;
+   clear: left !important;
+  }
+  body { 
+      margin:0;
+      padding:0;
+      line-height: 1.4;
+      word-spacing:1.1pt;
+      letter-spacing:0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 12pt; }
+          
+      /*Headings */
+      h1,h2,h3,h4,h5,h6 { font-family: Helvetica, Arial, sans-serif; }
+      h1{font-size:19pt;}
+      h2{font-size:17pt;}
+      h3{font-size:15pt;}
+      h4,h5,h6{font-size:12pt;}
+      
+      code { font: 10pt Courier, monospace; } 
+      blockquote { margin: 1.3em; padding: 1em;  font-size: 10pt; }
+      hr { background-color: #ccc; }
+      
+      /* Images */
+      img { float: left; margin: 1em 1.5em 1.5em 0; }
+      a img { border: none; }
+      
+      /* Table */
+      table { margin: 1px; text-align:left; border-collapse: collapse; }
+      th { border: 1px solid #333;  font-weight: bold; }
+      td { border: 1px solid #333; }
+      th,td { padding: 4px 10px; }
+      tfoot { font-style: italic; }
+      caption { background: #fff; margin-bottom: 20px; text-align:left; }
+      thead {display: table-header-group;}
+      tr {page-break-inside: avoid;} 
+}

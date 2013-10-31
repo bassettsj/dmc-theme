@@ -1,0 +1,90 @@
+name = DMC
+description = ..
+base theme = twitter_bootstrap
+core = 7.x
+
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Hero Unit'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+
+;stylesheets[all][] = bootstrap/css/bootstrap.min.css
+stylesheets[all][] = bootstrap/css/bootstrap-responsive.min.css
+stylesheets[all][] = css/twitter_bootstrap.css
+stylesheets[all][] = css/steven.css
+stylesheets[all][] = sparc_icon/style.css
+
+
+
+;scripts[] = bootstrap/js/bootstrap.min.js
+scripts[] = js/call.js
+scripts[] = isotope-site/jquery.isotope.min.js
+scripts[] = js/images.js
+scripts[] = js/alert.js
+scripts[] = js/jquery.fitvids.min.js
+;scripts[] = js/gallery.js
+;scripts[] = google-code-prettify/prettify.js
+;scripts[] = js/jquery.min.js
+;scripts[] = bootstrap/js/bootstrap-alert.js
+;scripts[] = bootstrap/js/bootstrap-button.js
+;scripts[] = bootstrap/js/bootstrap-carousel.js
+;scripts[] = bootstrap/js/bootstrap-collapse.js
+;scripts[] = bootstrap/js/bootstrap-dropdown.js
+;scripts[] = bootstrap/js/bootstrap-modal.js
+;scripts[] = bootstrap/js/bootstrap-popover.js
+;scripts[] = bootstrap/js/bootstrap-scrollspy.js
+;scripts[] = bootstrap/js/bootstrap-tab.js
+;scripts[] = bootstrap/js/bootstrap-tooltip.js
+;scripts[] = bootstrap/js/bootstrap-transition.js
+;scripts[] = bootstrap/js/bootstrap-typeahead.js
+
+;look into creating a way of loading all the js at the end when the document is ready
+;scripts[] = js/initialize.js
+
+;IMPORTANT - turn off the rebuild_registry on production sites!!
+settings[rebuild_registry] = 1
+settings[toggle_name] = 1
+settings[toggle_search] = 1
+
+
+;Exclude
+;javascript
+exclude[js][] = 'modules/contextual/contextual.js'
+exclude[js][] = 'misc/jquery.js'
+
+;css
+exclude[css][] = 'misc/vertical-tabs.css'
+exclude[css][] = 'modules/aggregator/aggregator.css'
+exclude[css][] = 'modules/block/block.css'
+exclude[css][] = 'modules/book/book.css'
+exclude[css][] = 'modules/comment/comment.css'
+exclude[css][] = 'modules/dblog/dblog.css'
+exclude[css][] = 'modules/file/file.css'
+exclude[css][] = 'modules/filter/filter.css'
+exclude[css][] = 'modules/forum/forum.css'
+exclude[css][] = 'modules/help/help.css'
+exclude[css][] = 'modules/menu/menu.css'
+exclude[css][] = 'modules/node/node.css'
+exclude[css][] = 'modules/openid/openid.css'
+exclude[css][] = 'modules/poll/poll.css'
+exclude[css][] = 'modules/search/search.css'
+exclude[css][] = 'modules/statistics/statistics.css'
+exclude[css][] = 'modules/syslog/syslog.css'
+;exclude[css][] = 'modules/system/admin.css'
+exclude[css][] = 'modules/system/maintenance.css'
+;exclude[css][] = 'modules/system/system.css'
+;exclude[css][] = 'modules/system/system.admin.css'
+;exclude[css][] = 'modules/system/system.base.css'
+exclude[css][] = 'modules/system/system.maintenance.css'
+exclude[css][] = 'modules/system/system.menus.css'
+exclude[css][] = 'modules/system/system.messages.css'
+exclude[css][] = 'modules/system/system.theme.css'
+exclude[css][] = 'modules/taxonomy/taxonomy.css'
+exclude[css][] = 'modules/tracker/tracker.css'
+exclude[css][] = 'modules/update/update.css'
+exclude[css][] = 'modules/user/user.css'
+
+
